@@ -4,4 +4,6 @@ This project was created to assist in the classification of bowel cancer patient
 
 Supports: CSV formatted data. Weka outputted J48 and NNGE models along with a standardised rule-based model. Customisation features via xml config files. Data variable descriptions via XML "translator" files. 
 
+Features: Proof of concept visualization techniques (Minkowski distances between data records and target labels).
+
 Full project details can be found in the accompanying thesis, available upon request or at a later date.
