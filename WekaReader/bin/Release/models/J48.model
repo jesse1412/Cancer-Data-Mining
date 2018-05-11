@@ -1,0 +1,430 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -U -M 2
+Relation:     True Final
+Instances:    550
+Attributes:   54
+              Age
+              PRBleeding
+              DarkRed
+              BrightRed
+              OnMotion
+              OnToiletPaper
+              MixedWithStool
+              MoreThanOnceIn6Weeks
+              FrequencyOfBleeding/2Wk
+              MucousPR
+              PusPR
+              AlterationInBowelHabit
+              FrequencyOfBO/2Wk
+              ChangeIn12Months
+              Constipated
+              LooseStool
+              Diarrhoea
+              StrainingAtDefecation
+              CompleteEvacuation
+              Urgency
+              PainOnDefectation
+              incontinence
+              AbdominalPain
+              lethargy
+              SOBOnActivities
+              SOBOnStairs
+              WtIncrease
+              WtDecrease
+              LooseClothing
+              AppetiteIncrease
+              AppetiteDecrease
+              Aspirin
+              Painkiller
+              Polyps
+              CAColon
+              CancerElsewhere
+              FamilyPolyp
+              FamilyCaColon
+              FamilyCaElsewhere
+              FamilyFrequency
+              Parent
+              Sibling
+              FamilyAverageAge
+              RelativePolyp
+              RelativeCaColon
+              RelativeCaElsewhere
+              RelativesFrequency
+              RelativesAverageAge
+              Crohns/UC
+              FamilyHxIBD
+              Smoker
+              ExSmoker
+              Hb
+              SimplifiedDiagnosis
+Test mode:4-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 unpruned tree
+------------------
+
+FamilyPolyp = No
+|   CAColon = No
+|   |   FrequencyOfBleeding/2Wk <= 6
+|   |   |   WtIncrease = Yes
+|   |   |   |   Sibling <= 0
+|   |   |   |   |   PRBleeding = No
+|   |   |   |   |   |   Painkiller = No
+|   |   |   |   |   |   |   lethargy = No: Disease (3.0/1.0)
+|   |   |   |   |   |   |   lethargy = Yes: Cancer (3.0)
+|   |   |   |   |   |   Painkiller = Yes: Normal (2.0)
+|   |   |   |   |   PRBleeding = Yes: Disease (7.0/1.0)
+|   |   |   |   Sibling > 0: Normal (2.0)
+|   |   |   WtIncrease = No
+|   |   |   |   Polyps = No
+|   |   |   |   |   Crohns/UC = No
+|   |   |   |   |   |   FamilyHxIBD = No
+|   |   |   |   |   |   |   PainOnDefectation = No
+|   |   |   |   |   |   |   |   Constipated = No
+|   |   |   |   |   |   |   |   |   AppetiteIncrease = No
+|   |   |   |   |   |   |   |   |   |   ChangeIn12Months = No
+|   |   |   |   |   |   |   |   |   |   |   CancerElsewhere = No
+|   |   |   |   |   |   |   |   |   |   |   |   Parent <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 73
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StrainingAtDefecation = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FrequencyOfBleeding/2Wk <= 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FamilyFrequency <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SOBOnStairs = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Aspirin = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CompleteEvacuation = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Smoker = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 59: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 59: Cancer (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Smoker = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LooseClothing = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MucousPR = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   incontinence = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   RelativeCaColon = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MixedWithStool = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 9.5: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 9.5: Polyp (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = Yes: Normal (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 13.9: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 13.9: Polyp (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MixedWithStool = Yes: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   RelativeCaColon = Yes: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   incontinence = Yes: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MucousPR = Yes: Disease (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LooseClothing = Yes: Polyp (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CompleteEvacuation = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   incontinence = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ExSmoker = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   RelativeCaElsewhere = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AppetiteDecrease = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 61: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 61: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AppetiteDecrease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MixedWithStool = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MoreThanOnceIn6Weeks = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   lethargy = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   WtDecrease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MucousPR = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Diarrhoea = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AlterationInBowelHabit = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Smoker = Yes: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Smoker = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = No: Normal (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = Yes: Normal (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 69: Polyp (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 69: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AlterationInBowelHabit = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = Yes: Normal (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Smoker = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 13: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 13: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Smoker = No: Normal (11.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Diarrhoea = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 59
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 12.6: Normal (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 12.6: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 59: Normal (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MucousPR = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = No: Normal (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = Yes: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   WtDecrease = Yes: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   lethargy = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 56: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 56: Polyp (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MoreThanOnceIn6Weeks = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 13.1: Normal (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 13.1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MucousPR = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FrequencyOfBO/2Wk <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = Yes: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = No: Normal (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FrequencyOfBO/2Wk > 0: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MucousPR = Yes: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MixedWithStool = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AlterationInBowelHabit = Yes: Normal (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AlterationInBowelHabit = No: Polyp (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   RelativeCaElsewhere = Yes: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ExSmoker = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MixedWithStool = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = Yes: Normal (9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 8.8: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 8.8: Normal (15.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MixedWithStool = Yes: Disease (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   incontinence = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ExSmoker = No: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ExSmoker = Yes: Polyp (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Aspirin = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 67: Disease (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 67: Normal (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SOBOnStairs = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 62: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 62: Normal (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FamilyFrequency > 0: Normal (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FrequencyOfBleeding/2Wk > 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = No: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = Yes: Cancer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StrainingAtDefecation = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   lethargy = No: Disease (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   lethargy = Yes: Polyp (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Age > 73
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StrainingAtDefecation = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FamilyCaElsewhere = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SOBOnStairs = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   incontinence = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LooseClothing = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FamilyCaColon = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   RelativeCaColon = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MucousPR = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FrequencyOfBO/2Wk <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   DarkRed = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Painkiller = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Diarrhoea = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   OnToiletPaper = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Smoker = Yes: Disease (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Smoker = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 14.1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AppetiteDecrease = Yes: Disease (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AppetiteDecrease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   lethargy = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 75: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 75
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 79: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 79: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ExSmoker = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AlterationInBowelHabit = Yes: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AlterationInBowelHabit = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 80: Cancer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 80: Disease (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ExSmoker = Yes: Disease (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = Yes: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   lethargy = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 9.4: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 9.4: Cancer (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 14.1: Normal (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   OnToiletPaper = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 15: Normal (12.0/5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 15: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Diarrhoea = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   PRBleeding = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 10.3: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 10.3: Disease (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   PRBleeding = Yes: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = No: Normal (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Painkiller = Yes: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   DarkRed = Yes: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FrequencyOfBO/2Wk > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CompleteEvacuation = No: Normal (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CompleteEvacuation = Yes: Disease (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MucousPR = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 12: Normal (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 12: Disease (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   RelativeCaColon = Yes: Disease (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FamilyCaColon = Yes: Normal (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LooseClothing = Yes: Disease (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   incontinence = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   PRBleeding = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ExSmoker = No: Normal (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ExSmoker = Yes: Polyp (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   PRBleeding = Yes: Normal (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SOBOnStairs = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AppetiteDecrease = Yes: Normal (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AppetiteDecrease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AlterationInBowelHabit = Yes: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AlterationInBowelHabit = No: Normal (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FamilyCaElsewhere = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FamilyAverageAge <= 66: Cancer (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FamilyAverageAge > 66: Disease (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StrainingAtDefecation = Yes: Normal (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Parent > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   LooseClothing = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Smoker = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = Yes: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = No: Normal (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Smoker = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   lethargy = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = Yes: Normal (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ExSmoker = No: Cancer (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   ExSmoker = Yes: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   lethargy = Yes: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   LooseClothing = Yes: Disease (5.0)
+|   |   |   |   |   |   |   |   |   |   |   CancerElsewhere = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   Hb <= 11.5: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Hb > 11.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 13.3: Cancer (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 13.3: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   ChangeIn12Months = Yes
+|   |   |   |   |   |   |   |   |   |   |   Smoker = Yes: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Smoker = No
+|   |   |   |   |   |   |   |   |   |   |   |   Age <= 62: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Age > 62: Disease (6.0/1.0)
+|   |   |   |   |   |   |   |   |   AppetiteIncrease = Yes: Normal (3.0/2.0)
+|   |   |   |   |   |   |   |   Constipated = Yes
+|   |   |   |   |   |   |   |   |   FamilyCaColon = No
+|   |   |   |   |   |   |   |   |   |   FamilyAverageAge <= 24
+|   |   |   |   |   |   |   |   |   |   |   FrequencyOfBleeding/2Wk <= 3
+|   |   |   |   |   |   |   |   |   |   |   |   ChangeIn12Months = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   AlterationInBowelHabit = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DarkRed = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 78
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MucousPR = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SOBOnStairs = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Painkiller = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AppetiteDecrease = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 69: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 69: Polyp (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AppetiteDecrease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LooseClothing = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   WtDecrease = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CompleteEvacuation = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   PRBleeding = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = Yes: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AbdominalPain = No: Disease (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   PRBleeding = Yes: Polyp (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CompleteEvacuation = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 9.7: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 9.7
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StrainingAtDefecation = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Diarrhoea = No: Normal (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Diarrhoea = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 64: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 64: Disease (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StrainingAtDefecation = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age <= 70: Disease (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 70: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = Yes: Normal (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   WtDecrease = Yes: Disease (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   LooseClothing = Yes: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Painkiller = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FrequencyOfBO/2Wk <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 12.6: Disease (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 12.6: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   FrequencyOfBO/2Wk > 1: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SOBOnStairs = Yes: Normal (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   MucousPR = Yes: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Age > 78
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   lethargy = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CompleteEvacuation = No: Disease (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CompleteEvacuation = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = No
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb <= 13.4: Polyp (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Hb > 13.4: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Urgency = Yes: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   lethargy = Yes: Polyp (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   DarkRed = Yes
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StrainingAtDefecation = No: Polyp (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StrainingAtDefecation = Yes: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AlterationInBowelHabit = No: Normal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   ChangeIn12Months = Yes: Polyp (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   FrequencyOfBleeding/2Wk > 3: Disease (2.0)
+|   |   |   |   |   |   |   |   |   |   FamilyAverageAge > 24: Disease (2.0)
+|   |   |   |   |   |   |   |   |   FamilyCaColon = Yes: Normal (7.0/1.0)
+|   |   |   |   |   |   |   PainOnDefectation = Yes
+|   |   |   |   |   |   |   |   AbdominalPain = Yes
+|   |   |   |   |   |   |   |   |   AlterationInBowelHabit = Yes
+|   |   |   |   |   |   |   |   |   |   CompleteEvacuation = No
+|   |   |   |   |   |   |   |   |   |   |   MucousPR = No
+|   |   |   |   |   |   |   |   |   |   |   |   MixedWithStool = No: Normal (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   MixedWithStool = Yes: Cancer (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   MucousPR = Yes: Cancer (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   CompleteEvacuation = Yes
+|   |   |   |   |   |   |   |   |   |   |   Diarrhoea = No: Disease (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Diarrhoea = Yes: Normal (3.0)
+|   |   |   |   |   |   |   |   |   AlterationInBowelHabit = No: Disease (4.0)
+|   |   |   |   |   |   |   |   AbdominalPain = No: Normal (6.0)
+|   |   |   |   |   |   FamilyHxIBD = Yes
+|   |   |   |   |   |   |   lethargy = No
+|   |   |   |   |   |   |   |   Hb <= 13.2: Disease (2.0/1.0)
+|   |   |   |   |   |   |   |   Hb > 13.2: Cancer (3.0)
+|   |   |   |   |   |   |   lethargy = Yes: Normal (8.0/2.0)
+|   |   |   |   |   Crohns/UC = Yes: Normal (3.0/1.0)
+|   |   |   |   Polyps = Yes
+|   |   |   |   |   FrequencyOfBleeding/2Wk <= 2
+|   |   |   |   |   |   AlterationInBowelHabit = Yes
+|   |   |   |   |   |   |   FrequencyOfBO/2Wk <= 2: Normal (6.0/1.0)
+|   |   |   |   |   |   |   FrequencyOfBO/2Wk > 2: Disease (3.0/1.0)
+|   |   |   |   |   |   AlterationInBowelHabit = No
+|   |   |   |   |   |   |   Painkiller = No: Cancer (5.0/1.0)
+|   |   |   |   |   |   |   Painkiller = Yes: Disease (2.0)
+|   |   |   |   |   FrequencyOfBleeding/2Wk > 2: Normal (2.0)
+|   |   FrequencyOfBleeding/2Wk > 6
+|   |   |   WtDecrease = No
+|   |   |   |   Painkiller = No
+|   |   |   |   |   OnToiletPaper = No: Disease (2.0/1.0)
+|   |   |   |   |   OnToiletPaper = Yes: Normal (12.0/2.0)
+|   |   |   |   Painkiller = Yes: Polyp (2.0)
+|   |   |   WtDecrease = Yes: Polyp (3.0)
+|   CAColon = Yes: Disease (4.0/1.0)
+FamilyPolyp = Yes
+|   Hb <= 14.2: Disease (8.0/1.0)
+|   Hb > 14.2: Normal (2.0/1.0)
+
+Number of Leaves  : 	164
+
+Size of the tree : 	327
+
+
+Time taken to build model: 0.03 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         197               35.8182 %
+Incorrectly Classified Instances       353               64.1818 %
+Kappa statistic                          0.0092
+Mean absolute error                      0.3303
+Root mean squared error                  0.5169
+Relative absolute error                 98.6663 %
+Root relative squared error            126.4232 %
+Total Number of Instances              550     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.26      0.273      0.304     0.26      0.28       0.478    Disease
+                 0.546     0.538      0.456     0.546     0.497      0.505    Normal
+                 0.113     0.104      0.138     0.113     0.124      0.54     Polyp
+                 0.14      0.077      0.174     0.14      0.155      0.545    Cancer
+Weighted Avg.    0.358     0.351      0.338     0.358     0.345      0.505
+
+=== Confusion Matrix ===
+
+   a   b   c   d   <-- classified as
+  45 101  14  13 |   a = Disease
+  66 136  28  19 |   b = Normal
+  16  41   8   6 |   c = Polyp
+  21  20   8   8 |   d = Cancer
+

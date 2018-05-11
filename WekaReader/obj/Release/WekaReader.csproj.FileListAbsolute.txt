@@ -1,0 +1,7 @@
+E:\VisualStudio2017\WekaReader\WekaReader\bin\Release\WekaReader.exe.config
+E:\VisualStudio2017\WekaReader\WekaReader\bin\Release\WekaReader.exe
+E:\VisualStudio2017\WekaReader\WekaReader\bin\Release\WekaReader.pdb
+E:\VisualStudio2017\WekaReader\WekaReader\obj\Release\WekaReader.csproj.CoreCompileInputs.cache
+E:\VisualStudio2017\WekaReader\WekaReader\obj\Release\WekaReader.exe
+E:\VisualStudio2017\WekaReader\WekaReader\obj\Release\WekaReader.pdb
+E:\VisualStudio2017\WekaReader\WekaReader\obj\Release\WekaReader.csprojResolveAssemblyReference.cache
